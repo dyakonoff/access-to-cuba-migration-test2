@@ -46,6 +46,7 @@ dependencies {
 }
 
 def hsql = 'org.hsqldb:hsqldb:2.2.9'
+def access = 'net.sf.ucanaccess:ucanaccess:4.0.4'
 
 configure([globalModule, coreModule, webModule]) {
     apply(plugin: 'java')
@@ -85,6 +86,7 @@ configure(coreModule) {
         provided(servletApi)
         jdbc(hsql)
         testRuntime(hsql)
+        implementation access
 
     }
 
